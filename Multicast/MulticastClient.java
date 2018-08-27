@@ -18,7 +18,7 @@ public class MulticastClient {
     public static void main(String args[]) {
         try (MulticastSocket socket = new MulticastSocket(8888)) {
             InetAddress group = InetAddress.getByName("224.0.0.0");
-            socket.joinGroup(group);
+            socket.joinGroup(group); //May have issues and need to make adjustments on Mac, works more smoothly on windows 
             System.out.println("Client joined group.");
 
             byte[] buffer = new byte[256];
